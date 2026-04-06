@@ -1,0 +1,455 @@
+.economics-section{
+   width:100%;
+   min-height: 100%;
+    box-sizing: border-box;
+padding: 34px 24px 80px 24px;
+ 
+}
+.economics-container{
+    margin:24px 124px;
+    min-height:100%;
+
+}
+
+.cost-analysis{
+    color:#A16207;
+    background-color: #FEf9c3;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 
+                0 2px 4px -2px rgba(0, 0, 0, 0.025);
+  
+}
+.economics-cards-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:24px;
+    height:144px;
+    margin-bottom:32px;
+}
+.economics-card{
+    width:100%;
+    height:100%;
+    background-color: white;
+    border-radius: 15px;
+    padding:24px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 
+                0 2px 4px -2px rgba(0, 0, 0, 0.025);
+  
+    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); */
+    /* box-shadow: 0 12px 24px rgba(6, 78, 59, 0.06); */
+      
+
+}
+.economics-card-heading-text{
+    font-size:14px;
+    line-height: 20px;
+    color:#6B7280;
+    font-weight: 700;
+}
+
+.economics-card-footer{
+    font-size:12px;
+    line-height:16px;
+    margin-top:8px;
+    color:#9ca3af;
+}
+
+.ec3{
+    background-color: rgb(6, 78, 59);
+}
+
+.ec3-h{
+    color: #84CC16;
+}
+.system-roi-tracker-container{
+    background-color: white;
+    padding:32px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 
+                0 2px 4px -2px rgba(0, 0, 0, 0.025);
+    margin-bottom: 32px;
+    display:flex;
+    flex-direction: column;   
+
+}
+.system-roi-tracker-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom:16px;
+}
+.system-roi-tracker-main-heading-text{
+    font-size:18px;
+    line-height:28px;
+    font-weight:700;
+    color:rgb(6, 78, 59);
+}
+.system-roi-tracker-description-text{
+    font-size: 14px;
+    line-height: 20px;
+    color:#6B7280;
+    margin-top:4px;
+}
+.system-cost-recovered-percentage-value{
+    font-size:24px;
+    line-height: 28.8px;
+    color:rgb(6, 78, 59);
+    font-weight:900;
+    width:100%;
+    text-align: right;
+}
+.system-cost-recovered-percentage-label-text
+{
+    font-size:12px;
+    line-height:16px;
+    color:rgb(156, 163, 175);
+    font-weight: 700;
+    letter-spacing: 0.4px;
+
+}
+
+.system-roi-tracker-bar{
+    width:100%;
+    height:24px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 3.2fr 76.8fr;
+}
+
+.system-roi-tracker-bar-filled{
+    height:100%;
+    background-image:linear-gradient(to right, rgb(16,185,129),rgb(52,211,153));
+    border-top-left-radius: 20px;
+    border-bottom-left-radius:20px;
+}
+
+.system-roi-tracker-bar-unfilled{
+    height:100%;
+    background-color: rgb(243, 244, 246);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius:20px;
+}
+
+.system-roi-tracker-bar-label{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    margin-top:12px;   
+    font-size:14px;
+    line-height:20px;
+    font-weight:700;
+}
+
+.system-roi-tracker-bar-label-left{
+    color:#10b981;
+}
+
+.system-roi-tracker-bar-label-right{
+    color:#9ca3af;
+}
+
+.system-roi-tracker-section-bottom-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:24px;
+    height: 267.2px;
+    margin-top:24px;
+    margin-bottom:32px;
+
+}
+.system-anamoly-card,.net-metering-export-card{
+    height:100%;
+    background-color: #fef2f2;
+    padding:24px;
+    border-radius:15px;
+    box-sizing: border-box;
+    border: 1px solid rgb(254, 226, 226);
+}
+
+
+.fa-circle{
+    font-size:10px;
+    margin-right:5px;
+    color:#f87171;
+}
+.system-anamoly-card-header,.net-metering-export-header{
+    font-size:18px;
+    line-height:28px;
+    color:#991b1b;
+    margin-bottom:8px;
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    
+}
+.warning-text,.net-metering-description{
+    color:#dc2626;
+    font-size:14px;
+    line-height:20px;
+    margin-bottom:16px;
+}
+
+.diagnosis-section{
+    padding:16px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+    border:1px solid rgb(254, 202, 202);
+}
+
+.diagnosis-section-one,.diagnosis-section-two{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.diagnosis-section-keys{
+    font-size:12px;
+    line-height: 20px;
+    font-weight: 700;
+     color:#6B7280; 
+}
+.diagnosis-section-one{
+    margin-bottom: 4px;
+}
+
+.diagnosis-section-values{
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 20px;
+    color:#dc2626;
+}
+
+.val2{
+    color:#b91c1c;
+    font-size:18px;
+    line-height: 28px;
+    font-weight: 900;
+}
+
+.panel-maintenance-button{
+    background-color: #dc2626;
+    color:white;
+    font-size:16px;
+    line-height: 24px;
+    padding:12px 16px;
+    box-sizing: border-box;
+    border:none;
+    width:100%;
+    border-radius:8px;
+    font-weight: 700;
+    margin-top: 16px;
+}
+
+.net-metering-export-card{
+    background-image: linear-gradient(to right bottom, rgb(6,78,59),rgb(16,185,129));
+    border: 0.8px solid rgb(21,128,61);
+
+}
+
+.net-metering-export-header{
+    color:#f0fdf4;
+}
+
+.net-metering-description{
+    color:rgb(229, 231, 235);
+}
+
+.exported-power-reading-container{
+    display:flex;
+    flex-direction:row;
+    row-gap:12px;
+    align-items: baseline;
+}
+
+.exported-power-reading{
+    font-size: 48px;
+    line-height:48px;
+    color:white;
+    font-weight: 900;
+}
+
+.exported-power-reading-unit{
+    font-size: 18px;
+    line-height: 28px;
+    color:#bbf7d0;
+    margin-left:12px;
+    margin-bottom:4px;
+}
+
+.generated-profit-container{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    backdrop-filter: blur(4px);  
+    background-color:rgba(0, 0, 0, 0.2);
+    padding:16px;
+    border-radius: 15px;
+    align-items: center;
+}
+
+.generated-profit-text{
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 700;
+    color:rgb(229, 231, 235);
+    
+}
+
+.generated-profit-amount{
+    font-size:20px;
+    line-height: 28px;
+    color:white;
+    font-weight: 700;
+}
+
+.fa-plug
+{
+   font-size: 30px;
+   color:rgba(134, 239, 172, 0.5);
+}
+
+.power-comparision-header{
+    font-size:18px;
+    line-height: 28px;
+    color:rgb(6, 78, 59);
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.power-comparision-grid{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    gap:24px;
+    
+    margin-bottom: 32px;
+}
+
+.power-comparision-card{
+    background-color: white;
+    border-radius: 15px;
+    padding:20px;
+    box-sizing:border-box;
+    height:100%;
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 
+                0 2px 4px -2px rgba(0, 0, 0, 0.025);
+}
+
+.power-comparision-card-icon{
+    height:48px;
+    width:48px;
+    border-radius:50%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    margin-right:16px;
+}
+.pc1{
+    background-color: #eff6ff;
+    color:rgb(59, 130, 246);  
+     
+}
+
+.pc2{
+    background-color: #faf5ff;
+    color:rgb(168, 85, 247);  
+  
+}
+
+.pc3
+{
+    background-color: #fefce8;
+    color:rgb(234, 179, 8);
+}
+
+.pc4{
+    background-color: #fef2f2;
+    color:rgb(239, 68, 68);
+}
+
+.power-comparision-card-data-number{
+    font-size:18px;
+    line-height: 28px;
+    font-weight: 700;
+    color:#1f2937;
+
+
+
+}
+
+.power-comparision-card-data-device{
+    font-size: 12px;
+    line-height: 16px;
+    color:#6B7280;
+    font-weight: 700;
+
+}
+/* =======================================================
+   MOBILE RESPONSIVENESS - ECONOMICS PAGE
+   ======================================================= */
+@media (max-width: 768px) {
+    
+    /* 1. THE CONTAINER: Remove the massive desktop side-margins */
+    .economics-container {
+        margin: 24px 16px; /* Changes 124px sides to a mobile-friendly 16px */
+    }
+
+    /* 2. THE TOP CARDS: 3 columns (Generated, Saved, Offset) become 1 column */
+    .economics-cards-grid {
+        grid-template-columns: 1fr;
+        height: auto; /* DESTROYS the hardcoded 144px height */
+        gap: 16px;
+    }
+
+    /* 3. ROI TRACKER & ANOMALY: Fix the tracker typography and stack the bottom cards */
+    .system-roi-tracker-container {
+        padding: 20px; /* Reduces the bulky 32px padding for small screens */
+    }
+    .system-roi-tracker-header {
+        flex-direction: column; /* Stacks the Tracker Title on top of the Percentage */
+        align-items: flex-start;
+        gap: 12px;
+    }
+    .system-cost-recovered-percentage-value {
+        text-align: left; /* Re-aligns the "3.2%" to the left since it's stacked now */
+    }
+    
+    /* Stacks the "System Anomaly" and "Net Metering" cards */
+    .system-roi-tracker-section-bottom-grid {
+        grid-template-columns: 1fr;
+        height: auto; /* DESTROYS the hardcoded 267.2px height */
+        gap: 16px;
+    }
+
+    /* 4. NET METERING TEXT: Shrink the massive 48px font so it doesn't break the box */
+    .exported-power-reading {
+        font-size: 36px; 
+    }
+    .generated-profit-container {
+        flex-direction: column; /* Stacks Profit Text and Plug Icon */
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    /* 5. POWER COMPARISON: 4 columns (Phone, Laptop, etc.) become 1 column */
+    .power-comparision-grid {
+        grid-template-columns: 1fr;
+        margin-bottom: 0; 
+    }
+    .power-comparision-card {
+        margin-bottom: 16px; /* Gives them spacing since they are now stacked vertically */
+    }
+}
+
+    

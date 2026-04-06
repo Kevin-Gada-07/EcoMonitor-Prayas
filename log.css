@@ -1,0 +1,139 @@
+.logs-section{
+   width:100%;
+   min-height: 100%;
+    box-sizing: border-box;
+    padding:34px 24px;
+
+ 
+}
+.logs-container{
+  
+    margin:24px 124px;
+    min-height:100%;
+    margin-top:36px;
+
+   
+}
+
+
+.logs-header{
+   
+    font-size: 30px;
+    line-height: 36px;
+    color:#064e3b;
+    margin-bottom:24px;
+    
+    
+}
+
+.logs-table-wrapper {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.025);
+    overflow: hidden; /* Keeps the table corners locked inside the rounded box */
+    width: 100%;
+}
+
+.logs-table {
+    width: 100%;
+    border-collapse: collapse; /* Removes double borders between cells */
+    text-align: left;
+}
+
+/* --- HEADERS --- */
+.logs-table th {
+    background-color: #ffffff;
+    padding: 16px 24px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #6B7280;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+/* --- CELLS --- */
+.logs-table td {
+    padding: 16px 24px;
+    font-size: 14px;
+    
+    border-bottom: 1px solid #F3F4F6; /* Very faint gray line */
+}
+
+
+/* Remove the border from the very last row so it doesn't look messy */
+.logs-table tr:last-child td {
+    border-bottom: none;
+}
+
+.log-time {
+    color: #6B7280; /* Slightly lighter gray for the timestamp */
+}
+
+/* Bold dark green for the final power output */
+.log-power {
+    color: #064E3B;
+    font-weight: 800;
+}
+
+/* --- PILL BADGES --- */
+.source-badge {
+    padding: 6px 14px;
+    border-radius: 500px;
+    font-size: 12px;
+    font-weight: 700;
+    display: inline-block;
+}
+
+/* Solar Panel specific colors (Pale Emerald) */
+.badge-solar {
+    background-color: #dcfce7;
+    color: #15803d;
+    font-size: 12px;
+    line-height: 20px;
+    padding:0 8px;
+}
+
+/* Wind Turbine specific colors (Pale Lime/Olive) */
+.badge-wind {
+    background-color: #ecfccb;
+    color: #4d7c0f;
+        font-size: 12px;
+    line-height: 20px;
+    padding:0 8px;
+}
+/* =======================================================
+   MOBILE RESPONSIVENESS - LOGS PAGE
+   ======================================================= */
+@media (max-width: 768px) {
+    
+    /* 1. THE CONTAINER: Shrink the desktop side-margins */
+    .logs-container {
+        margin: 24px 16px;
+    }
+
+    /* 2. THE HEADER: Shrink the font size slightly so it fits nicely */
+    .logs-header {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+
+    /* 3. THE TABLE WRAPPER: Enable smooth horizontal scrolling inside the box */
+    .logs-table-wrapper {
+        overflow-x: auto; /* Allows swiping left/right inside the table */
+        -webkit-overflow-scrolling: touch; /* Makes the swipe momentum smooth on iPhones */
+    }
+
+    /* 4. THE TABLE: Force a minimum width so the data never squishes */
+    .logs-table {
+        min-width: 600px; /* Forces the table to stay wide, triggering the wrapper's scroll */
+    }
+
+    /* 5. TABLE CELLS: Reduce padding slightly to fit more data on screen at once */
+    .logs-table th, 
+    .logs-table td {
+        padding: 12px 16px; 
+        font-size: 10px;
+    }
+
+}

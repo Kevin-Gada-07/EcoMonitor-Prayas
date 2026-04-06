@@ -1,0 +1,192 @@
+.team-section{
+   width:100%;
+   min-height: 100%;
+    box-sizing: border-box;
+    padding:34px 24px;
+
+ 
+}
+.team-container{
+    margin:24px 124px;
+    min-height:100%;
+    margin-top:36px;
+   
+}
+
+.team-section-heading{
+    font-size: 36px;
+    line-height: 40px;
+    color:#064e3b;
+    margin-bottom:16px;
+    text-align: center;
+}
+.team-section-seprator{
+    margin:0px 568px;
+    padding:2px 48px;
+    background-color: #a855f7;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+.team-section-description{
+    font-size: 16px;
+    line-height: 24px;
+    color:#6b7280;
+    margin-top:16px;
+    width:100%;
+    text-align: center;
+}
+
+.team-section-header-container{
+    margin-bottom:48px;
+}
+
+.team-section-container{
+    display:flex ;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.team-card{
+    padding:32px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 
+                0 2px 4px -2px rgba(0, 0, 0, 0.025);    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;      
+        box-sizing: border-box;     
+     width:100%;    
+             
+}
+
+.team-card-icon-container{
+    background-color: #e5e7eb;
+    font-size: 30px;
+    height:96px;
+    width:96px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:rgb(156, 163, 175);
+    margin-bottom: 16px;
+
+}
+
+.team-card.guide{
+    width:288px;
+    border-top:4px solid #10b981;
+    margin-bottom: 32px;
+}
+
+.team-card-header{
+    font-size:20px;
+    line-height: 28px;
+    color:#064e3b;
+
+    
+}
+
+.team-card-description{
+    font-size: 14px;
+    font-weight: 700;
+    color:#10b981;
+    margin-bottom:16px;
+}
+.team-section-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap:24px;
+    width:100%;
+    margin-top:32px;
+    
+
+
+
+}
+
+.team-card-description.tc2{
+    color:#c084fc;
+}
+
+.team-card.tc2{
+   border-top: 4px solid #a855f7;
+}
+
+.team-card-description.tc1{
+    color:#FACC15;
+}
+
+.team-card.tc1{
+   border-top: 4px solid #FACC15;
+}
+
+.team-card-description.tc3{
+    color:rgb(132, 204, 22);
+}
+
+.team-card.tc3{
+   border-top: 4px solid rgb(132, 204, 22);
+}
+
+.team-card-description.tc4{
+    color:#DC2626;
+}
+
+.team-card.tc4{
+   border-top: 4px solid #DC2626;
+}
+
+.team-divider{
+    width:100%;
+    
+    height: 2px;
+   /* margin: 48px auto;  */
+    background: linear-gradient(to right, transparent, #10B981, transparent); 
+    
+    opacity: 0.4;
+    border-radius: 5px;
+}
+/* =======================================================
+   MOBILE RESPONSIVENESS - TEAM PAGE
+   ======================================================= */
+@media (max-width: 768px) {
+    
+    /* 1. THE CONTAINER: Shrink the desktop side-margins */
+    .team-container {
+        margin: 24px 16px;
+    }
+
+    /* 2. THE SEPARATOR FIX: Neutralize the 568px margin and mathematically center it */
+    .team-section-seprator {
+        margin: 0 auto; 
+        padding: 2px 0; 
+        width: 80px; 
+    }
+
+    /* 3. THE HEADER: Reduce the gap below the description */
+    .team-section-header-container {
+        margin-bottom: 32px;
+    }
+
+    /* 4. THE PROFESSOR'S CARD: Protect small screens from fixed widths */
+    .team-card.guide {
+        width: 100%; /* Allows it to shrink if the phone is smaller than 288px */
+        max-width: 288px; /* Stops it from getting awkwardly wide on tablets */
+    }
+
+    /* 5. THE GRID: 4 columns (The Students) become 1 column */
+    .team-section-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    /* 6. THE CARDS: Reduce the padding slightly to save screen real estate */
+    .team-card {
+        padding: 24px;
+    }
+}

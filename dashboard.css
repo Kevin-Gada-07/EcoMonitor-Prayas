@@ -1,0 +1,374 @@
+.dashboard-section{
+    width:100%;
+    min-height:100%;
+    background-color: #F0FDF4;
+    padding-bottom:36px
+}
+.dashboard-container{
+    width:100%;
+    min-height:100%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    padding:34px 0;
+}
+.dashboard-content{
+   width:1240px;
+   min-height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+}
+.dashboard-header{
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    padding: 16px 0;
+    box-sizing: border-box;
+    border-bottom: 0.8px solid rgba(0,0,0,0.1);
+    margin-bottom:24px;
+   
+}
+
+.dashboard-heading{
+    font-size:30px;
+    line-height: 36px;
+    color:#064e3b;
+}
+
+/* .divider{
+    width:100%;
+    border:1px solid rgba(0, 0, 0, 0.9);
+    
+    background-color: rgba(255, 255, 255, 0.2);
+    display:block;
+    flex-shrink:0;
+    color:#064e3b
+} */
+
+.sensor-indicator{
+    font-size:14px;
+    line-height:20px;
+    padding : 8px 16px;
+    color:#10B981;
+    background-color: #DCFCE7;
+    box-sizing: border-box;
+    border-radius:500px;
+    font-weight:700;
+}
+
+.readings-grid{
+    width:100%;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:24px;
+    height:152px;
+    margin-bottom: 32px;
+ 
+}
+
+.weather-card,.graph-card,.reading-card{
+    width:100%;
+    height:100%;
+    background-color: white;
+    border-radius:20px;
+  
+    padding:24px;
+    box-sizing: border-box;
+    transition: all 0.2s;
+    display:flex;
+    flex-direction:column;
+  
+}
+
+.reading-card:hover{
+    transform: translateY(-5px);
+}
+
+.rc1{
+    border-bottom: 4px solid #10B981;
+}
+.rc2
+{
+    border-bottom: 4px solid #84CC16;
+}
+
+.rc3{
+    background-image: linear-gradient(to right bottom, rgb(6, 78, 59), rgb(16, 185, 129));
+    border:none;
+}
+
+.reading-card-header{
+    display:flex;
+    flex-direction: row;
+    justify-content: left;
+    gap:10px;
+    align-items: center;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+    color:#6B7280;
+
+}
+
+.fa-solar-panel{
+    color:#10B981;
+}
+.wind-turbine-icon{
+    color:#84CC16;
+}
+.power-reading{
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: 900;
+    color:#064e3b;
+    margin-top: 12px;
+}
+
+.watt
+{
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 400;
+    color:#9CA3AF;
+}
+
+.voltage-current-readings{
+    font-size: 14px;
+    line-height:20px;
+    font-weight:400;
+    color:#9CA3AF;
+    margin-top:8px;
+}
+
+.rc3-header,.rc3-watt,.rc3-voltage-current-readings{
+    color:#DCFCE7;
+}
+
+.rc3-power-reading{
+    color:white;
+}
+
+.graphs-grid{
+    width:100%;
+    max-height:342px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:24px;
+    margin-bottom:32px;
+    flex-shrink:0;
+}
+
+.weather-grid{
+    width:100%;
+    height:233.6px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:24px;
+    flex-shrink:0;
+    margin-bottom:32px;
+    
+}
+.graph-title{
+    font-size:18px;
+    line-height: 28px;
+    font-weight:700;
+    text-align:center;
+    color:#064e3b;
+    margin-bottom:16px;
+}
+
+.graph-card{
+    align-items: center;
+}
+
+.graph-canvas{
+    width:400px;
+    height:250px;
+    
+}
+
+.weather-card-header-container{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    margin-bottom:16px;
+}
+
+.weather-location{
+    font-size:12px;
+    line-height:16px;
+    padding: 4px 8px;
+    background-color: #F3F4F6;
+    color:#9CA3AF;
+    border-radius: 4px;
+    font-weight:700;
+    box-sizing: border-box;
+
+}
+
+.fa-location-dot{
+    color:rgb(248, 113, 113);
+    margin-right:5px;
+}
+
+.weather-card-header{
+    color:#4b5563;
+    font-size:16px;
+    line-height: 24px;
+    letter-spacing: 0.4px;
+    font-weight: 700;
+
+}
+.weather-conditions-container{
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-between;
+    margin-bottom:24px;
+}
+.temp{
+    font-size:36px;
+    line-height:40px;
+    color:#064e3b;
+    font-weight: 900;
+}
+
+.weather-conditions-text{
+    font-size:16px;
+    line-height:24px;
+    margin-top:4px;
+    color:#6B7280;
+}
+
+.fa-sun{
+    color:rgb(250, 204, 21);
+    font-size:48px;
+}
+
+.generation-distribution-grid{
+    width:100%;
+    height:20px;
+
+    display: grid;
+    grid-template-columns: 71fr 29fr;
+}
+
+.solar-generation{
+    background-color: #10B981;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    font-size:10px;
+    line-height: 20px;
+    color:white;
+    text-align: center;
+    font-weight: 700;
+}
+
+.wind-generation{
+    background-color: #84CC16;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-size:10px;
+    line-height: 20px;
+    color:#064e3b;
+    text-align: center;
+    font-weight:700;
+}
+.distribution-labels{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 14px;
+    line-height:20px;
+    margin-top:12px;
+    font-weight: 700;
+}
+.solar-generation-label
+{
+    color:#10B981;
+}
+
+.wind-generation-label{
+    color:#84CC16;
+}
+
+.grid2{
+    grid-template-columns: 15fr 85fr;
+}
+.name{
+    color:red;
+    font-size: 78px;;
+}
+
+.fa-wind.forecast{
+    font-size:48px;
+    color:rgb(156, 163, 175);
+}
+
+.bottom-placeholder{
+    margin-top:22px;
+    padding:5px;
+}
+
+@media (max-width: 768px) {
+
+    .dashboard-content {
+        width: 100%;
+        padding: 0 16px; 
+        box-sizing: border-box;
+    }
+
+   
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        gap: 12px;
+        padding-bottom: 16px;
+    }
+
+    
+    .readings-grid {
+        grid-template-columns: 1fr; 
+        height: auto;
+        gap: 16px;
+    }
+
+   /* 4. THE CHARTS: 2 columns become 1 column */
+    .graphs-grid {
+        grid-template-columns: 1fr;
+        max-height: none; 
+        gap: 16px;
+    }
+    
+    /* THE CHART.JS FIX: Lock the wrapper and force the canvas inside */
+    .graph-canvas {
+        position: relative; /* Crucial: Creates a cage for the canvas */
+        width: 100% !important;
+        height: 220px; /* Slightly shorter so it fits nicely on screen */
+    }
+    
+    .graph-canvas canvas {
+        position: absolute; /* Forces the graph to obey the relative wrapper */
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .weather-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+        gap: 16px;
+    }
+    .weather-card-header-container {
+        flex-direction: column; 
+        align-items: flex-start;
+        gap: 10px;
+    }
+    }
