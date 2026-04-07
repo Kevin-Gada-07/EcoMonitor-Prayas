@@ -19,6 +19,7 @@
    <link rel="stylesheet" href="milestones.css">
    <link rel="stylesheet" href="team.css">
    <link rel="stylesheet" href="log.css">
+   <link rel="stylesheet" href="voice.css">
   
 
 </head>
@@ -27,7 +28,6 @@
         <nav class="navbar">
         <div class="navbar-container">
             <div class="navbar-flex-container">
-                         <div class="hamburger-menu"><i class="fas fa-bars"></i></div>
            <h1 class="website-logo  "> <i class="fas fa-leaf" style="margin-right:8px; color:#84CC16;"></i>EcoMonitor</h1>
    
               
@@ -39,6 +39,7 @@
                         <li><a href="" class="nav-links logs-button">Logs</a></li>
                         <li><a href="" class="nav-links team-button">Team</a></li>
                         <li><a href="" class="nav-links button-styles cta-btn">Live Dashboard <i class="fas fa-chart-line" style="margin-left: 5px;"></i></a></li>
+                        <li><a href="" id="navbar-sign-out" class="nav-links" style="display: none; color: #EF4444; font-weight: 600;"><i class="fas fa-sign-out-alt" style="margin-right: 5px;"></i>Sign Out</a></li>
                     </ul>
             </div>
          
@@ -76,8 +77,8 @@
                     <p class="reading-card-header-text">SOLAR PANEL</p>
                    </div>
 
-                   <p class="power-reading">45.2 <span class="watt">mW</span></p>
-                   <p class="voltage-current-readings"> 12.4V &#8226; 3.6mA</p>
+                   <p class="power-reading" id="solar-power">45.2 <span class="watt">mW</span></p>
+                   <p class="voltage-current-readings"> <span id="solar-voltage">12.4</span>V &#8226; <span id="solar-current">3.6</span>mA</p>
                 </div>
                 <div class="reading-card rc2" >
                     <div class="reading-card-header"> 
@@ -535,7 +536,7 @@
               <div class="team-section-container">
                <div class="team-card guide">
                 <div class="team-card-icon-container guide ">
-                    <i class="fas fa-user-tie guide"></i>
+                    <img src="Rohail sir hot pic.png" alt="project-guide-image" class="team-card-image">
                 </div>
                 <h3 class="team-card-header">Prof. Rohail Bootwalla</h3>
                 <p class="team-card-description">Project Guide & Mentor </p>
@@ -545,29 +546,30 @@
 
                 <div class="team-section-grid">
                     <div class="team-card tc1">
-                        <div class="team-card-icon-container guide ">
-                    <i class="fas fa-code guide"></i>
+                        <div class="team-card-icon-container guide ">   
+                            <img src="harshil-hot-pic.webp" alt="member-photo" class="team-card-image">
+                  
                 </div>
                 <h3 class="team-card-header">Harshil Sanchela</h3>
                 <p class="team-card-description tc1">Hardware & C++ Integration </p>
                     </div>
                     <div class="team-card tc2">
                         <div class="team-card-icon-container guide ">
-                    <i class="fas fa-laptop-code"></i>
+                      <img src="Kevin-hottest-pic.jpeg" alt="member-photo" class="team-card-image">
                 </div>
                 <h3 class="team-card-header">Kevin Gada</h3>
                 <p class="team-card-description tc2">UI/UX & Web Developer</p>
                     </div>
                     <div class="team-card tc3">
                         <div class="team-card-icon-container guide ">
-                    <i class="fas fa-user-tie guide"></i>
+                     <img src="Meet-photo.jpeg" alt="member-photo" class="team-card-image">
                 </div>
                 <h3 class="team-card-header">Meet Limbad</h3>
                 <p class="team-card-description tc3"> Features Designer</p>
                     </div>
                     <div class="team-card tc4">
                         <div class="team-card-icon-container guide ">
-                    <i class="fas fa-user-tie guide"></i>
+                    <img src="heer-photo.jpeg" alt="member-photo" class="team-card-image">
                 </div>
                 <h3 class="team-card-header">Heer Shah</h3>
                 <p class="team-card-description tc4">Hardware & Creative</p>
@@ -579,6 +581,19 @@
       </section> 
     </main>
 
+    <div class="voice-widget-container">
+        <select id="langSelect" class="voice-lang-select">
+            <option value="en-US">EN</option>
+            <option value="hi-IN">हिन्दी</option>
+            <option value="mr-IN">मराठी</option>
+            <option value="gu-IN">ગુજ</option>
+        </select>
+        
+        <button id="startBtn" class="voice-fab">
+            <i class="fas fa-microphone" id="mic-icon"></i>
+            <span id="voice-status" class="voice-status-text">Listening...</span>
+        </button>
+    </div>
       <footer >
      
                 <p class="footer-text">© 2026 EcoMonitor. A Project by FE INFT B Students @ SFIT</p>

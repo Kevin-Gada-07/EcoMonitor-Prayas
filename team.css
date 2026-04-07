@@ -190,3 +190,9 @@
         padding: 24px;
     }
 }
+
+.team-card-image{
+    height:96px;
+    width:96px;
+    border-radius: 50%;
+}
