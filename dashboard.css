@@ -82,9 +82,15 @@
     transition: all 0.2s;
     display:flex;
     flex-direction:column;
+
   
 }
 
+.rc1,.rc2{
+    justify-content: space-between;
+    flex-direction: row;
+    justify-content: space-between;
+}
 .reading-card:hover{
     transform: translateY(-5px);
 }
@@ -101,7 +107,13 @@
     background-image: linear-gradient(to right bottom, rgb(6, 78, 59), rgb(16, 185, 129));
     border:none;
 }
-
+.model-container{
+    width:100px;
+    height: 100px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    overflow:hidden;
+}
 .reading-card-header{
     display:flex;
     flex-direction: row;
@@ -332,12 +344,13 @@
         padding-bottom: 16px;
     }
 
-    
+/*     
     .readings-grid {
         grid-template-columns: 1fr; 
         height: auto;
         gap: 16px;
-    }
+        width:100%;
+    } */
 
    /* 4. THE CHARTS: 2 columns become 1 column */
     .graphs-grid {
@@ -372,3 +385,81 @@
         gap: 10px;
     }
     }
+.load-management-section {
+    margin: 30px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+}
+
+.load-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.load-category-card {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid #eef2f3;
+}
+
+.category-label {
+    font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.priority-tag { font-size: 10px; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; }
+
+.essential { color: #10B981; } /* Green */
+.standard { color: #3B82F6; }  /* Blue */
+.heavy { color: #EF4444; }     /* Red */
+
+.load-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f9fafb;
+}
+
+.load-info { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #4B5563; }
+
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.status-badge.on { background: #DCFCE7; color: #15803D; }
+.status-badge.off { background: #F3F4F6; color: #6B7280; border: 1px dashed #D1D5DB; }
+
+/* Specific Borders for Priority Levels */
+.border-p1 { border-left: 5px solid #10B981; } /* Hospital Green */
+.border-p2 { border-left: 5px solid #3B82F6; } /* Municipal Blue */
+.border-p3 { border-left: 5px solid #F59E0B; } /* Residential Amber */
+
+.critical { color: #10B981; text-transform: uppercase; letter-spacing: 1px; }
+.municipal { color: #3B82F6; }
+.residential { color: #F59E0B; }
+
+/* Styling the Active/Shed labels */
+.status-badge.on { 
+    background: #DCFCE7; 
+    color: #15803D; 
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.3); 
+}
+.status-badge.off { 
+    background: #FEF3C7; 
+    color: #92400E; 
+    border: 1px solid #FDE68A;
+}

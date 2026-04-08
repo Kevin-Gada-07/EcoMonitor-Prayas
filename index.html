@@ -18,7 +18,7 @@
    <link rel="stylesheet" href="hardware.css">
    <link rel="stylesheet" href="milestones.css">
    <link rel="stylesheet" href="team.css">
-   <link rel="stylesheet" href="log.css">
+
    <link rel="stylesheet" href="voice.css">
   
 
@@ -36,7 +36,7 @@
                         <li><a href="" class="nav-links hardware-button">Hardware</a></li>
                         <li><a href="" class="nav-links economics-button" style="color:#FACC15;"> <i class="fas fa-coins" style="margin-right:5px;"></i>Economics</a></li>
                         <li><a href="" class="nav-links milestones-button" style="color:#C084FC;"> <i class="fas fa-medal" style="margin-right:5px;"></i>Milestones</a></li>
-                        <li><a href="" class="nav-links logs-button">Logs</a></li>
+        
                         <li><a href="" class="nav-links team-button">Team</a></li>
                         <li><a href="" class="nav-links button-styles cta-btn">Live Dashboard <i class="fas fa-chart-line" style="margin-left: 5px;"></i></a></li>
                         <li><a href="" id="navbar-sign-out" class="nav-links" style="display: none; color: #EF4444; font-weight: 600;"><i class="fas fa-sign-out-alt" style="margin-right: 5px;"></i>Sign Out</a></li>
@@ -72,22 +72,30 @@
                 </div>
                <div class="readings-grid">
                 <div class="reading-card rc1">
+                    <div class="reading-card-readings">
+           
                    <div class="reading-card-header"> 
                     <i class="fas fa-solar-panel"></i>
                     <p class="reading-card-header-text">SOLAR PANEL</p>
-                   </div>
+                    </div>
+                   <p class="power-reading" id="solar-power">0 <span class="watt">mW</span></p>
 
-                   <p class="power-reading" id="solar-power">45.2 <span class="watt">mW</span></p>
-                   <p class="voltage-current-readings"> <span id="solar-voltage">12.4</span>V &#8226; <span id="solar-current">3.6</span>mA</p>
+
+                   <p class="voltage-current-readings"> <span id="solar-voltage">0</span>V &#8226; <span id="solar-current">0</span>mA</p>
+                  </div>
+                  <div class="model-container" id="solar-model"></div>
                 </div>
                 <div class="reading-card rc2" >
+                    <div class="reading-card-readings">
                     <div class="reading-card-header"> 
                     <i class="fas fa-wind wind-turbine-icon"></i>
                     <p class="reading-card-header-text">WIND TURBINE</p>
                    </div>
 
-                   <p class="power-reading">18.5 <span class="watt">mW</span></p>
-                   <p class="voltage-current-readings"> 10.1V &#8226; 1.8mA</p>
+                   <p class="power-reading" id="wind-power">0 <span class="watt">mW</span></p>
+                   <p class="voltage-current-readings"> <span id="wind-voltage">0</span>V&#8226; <span id="wind-current">0</span>mA</p>
+                   </div> 
+                   <div class="model-container" id="wind-model"></div>
                 </div>
                 <div class="reading-card rc3">
                     <div class="rc3-header reading-card-header "> 
@@ -95,10 +103,52 @@
                     <p class=" rc3-header-text reading-card-header-text ">NET GENERATION</p>
                    </div>
 
-                   <p class="rc3-power-reading power-reading ">63.7 <span class="watt rc3-watt">mW</span></p>
+                   <p class="rc3-power-reading power-reading "> <span id="total-power">0</span> <span class="watt rc3-watt">0</span></p>
                    <p class="rc3-voltage-current-readings voltage-current-readings"> Combined System Output</p>
                 </div>
                </div>
+<section class="load-management-section">
+    <div class="section-header">
+        <h2 class="section-title"><i class="fas fa-bolt"></i> Grid Priority Control</h2>
+        <p class="section-subtitle">Automated shedding based on generation capacity</p>
+    </div>
+
+    <div class="load-grid">
+        <div class="load-category-card border-p1">
+            <h3 class="category-label critical">Critical <span class="priority-tag">P1</span></h3>
+            <div class="load-item">
+                <div class="load-info">
+                    <i class="fas fa-hospital"></i>
+                    <span>City Hospital</span>
+                </div>
+                <span id="load-hospital" class="status-badge on">Priority On</span>
+            </div>
+        </div>
+
+        <div class="load-category-card border-p2">
+            <h3 class="category-label municipal">Municipal <span class="priority-tag">P2</span></h3>
+            <div class="load-item">
+                <div class="load-info">
+                    <i class="fas fa-street-view"></i>
+                    <span>Sector Streetlights</span>
+                </div>
+                <span id="load-streetlights" class="status-badge on">Active</span>
+            </div>
+        </div>
+
+        <div class="load-category-card border-p3">
+            <h3 class="category-label residential">Residential <span class="priority-tag">P3</span></h3>
+            <div class="load-item">
+                <div class="load-info">
+                    <i class="fas fa-home"></i>
+                    <span>Block-A Housing</span>
+                </div>
+                <span id="load-house" class="status-badge off">Shed</span>
+            </div>
+        </div>
+    </div>
+</section>
+
                 <div class="graphs-grid">
                     <div class="graph-card">
                         <h3 class="graph-title">Voltage History(V)</h3>
@@ -223,19 +273,19 @@
             <div class="economics-cards-grid">
                 <div class="economics-card ec1" style="border-left: solid 4px rgb(250, 204, 21);">
                    <h3 class="economics-card-heading-text">TOTAL POWER GENERATED</h3>
-                   <p class="power-reading">14.2 <span class="watt">kWh</span></p>
+                   <p class="power-reading" id="eco-total-kwh">0 <span class="watt">kWh</span></p>
                    <p class="economics-card-footer">Lifetime system output</p>
                
                 </div>
                 <div class="economics-card ec2" style="border-left: solid 4px #16a24a;">
                    <h3 class="economics-card-heading-text">MONEY SAVED (EST.)</h3>
-                   <p class="power-reading" style="color:#16a24a;">&#8377; 113.60</p>
+                   <p class="power-reading" style="color:#16a24a;" class="eco-money-saved">&#8377; 0.0</p>
                    <p class="economics-card-footer">Based on &#8377; 8.00 per unit (kWh)</p>
                
                 </div>
                 <div class="economics-card ec3">
                    <h3 class="economics-card-heading-text ec3-h">CARBON OFFSET</h3>
-                   <p class="power-reading" style="color:white;">12.5 <span class="watt" style="color:#D1D5DB;">kg CO<sub>2</sub></span></p>
+                   <p class="power-reading" style="color:white;" id="eco-carbon">0.0 <span class="watt" style="color:#D1D5DB;">kg CO<sub>2</sub></span></p>
                    <p class="economics-card-footer" style="color:#D1D5DB;"><i class="fas fa-tree" style="margin-right:5px;"></i> Equivalent to Planting 1 tree</p>
                
                 </div>
@@ -250,20 +300,20 @@
                         </div>
 
                         <div class="system-cost-recovered-percentage-container">
-                            <p class="system-cost-recovered-percentage-value">3.2&percnt;</p>
+                            <p class="system-cost-recovered-percentage-value" id="eco-roi-percent">0&percnt;</p>
                             <p class="system-cost-recovered-percentage-label-text">COST RECOVERED</p>
                         </div>
                     </div>
                     <div class="system-roi-tracker-bar"> 
-                        <div class="system-roi-tracker-bar-filled"></div>
+                        <div class="system-roi-tracker-bar-filled" id="eco-roi-bar"></div>
                         <div class="system-roi-tracker-bar-unfilled"></div>
                     </div>
                     <div class="system-roi-tracker-bar-label">
-                        <p class="system-roi-tracker-bar-label-left">Recovered: &#8377;113.60 </p>
-                        <p class="system-roi-tracker-bar-label-right">Target Break-even:&#8377; 3,500.00 </p>
+                        <p class="system-roi-tracker-bar-label-left" id="eco-recovered-text">Recovered: &#8377;0.0</p>
+                        <p class="system-roi-tracker-bar-label-right">Target Break-even:&#8377; 00.00 </p>
                     </div>
                 </div>
-                <div class="system-roi-tracker-section-bottom-grid">
+                <!-- <div class="system-roi-tracker-section-bottom-grid">
                     <div class="system-anamoly-card">
                         <h3 class="system-anamoly-card-header"> <i class="fas fa-circle"></i>System Anamoly Detected </h3>
                         <p class="warning-text">Solar Output is 18% lower than expected for current clear-sky conditions.</p>
@@ -274,7 +324,7 @@
                             </div>
                             <div class="diagnosis-section-two">
                                 <p class="diagnosis-section-keys">EST. REVENUE LEAK</p>
-                                <p class="diagnosis-section-values val2">-&#8377; 4.50 / day</p>
+                                <p class="diagnosis-section-values val2">-&#8377; 0 / day</p>
                             </div>
                         </div>
                               <button class="panel-maintenance-button"><i class="fas fa-broom" style="margin-right: 5px;"></i>Log Panel Maintenance</button>
@@ -287,24 +337,24 @@
                         <div class="generated-profit-container">
                             <div class="generated-profit-container-left">
                                 <p class="generated-profit-text">GENERATED PROFIT</p>
-                                <P class="generated-profit-amount"> + &#8377; 19.20 </P>
+                                <P class="generated-profit-amount"> + &#8377; 0 </P>
                             </div>
                             <div class="generated-profit-container-right">
                                 <i class="fas fa-plug"></i>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
              <div class="power-comparision-container">
-            <h3 class="power-comparision-header">What does 14.2kWh power?</h3>
+            <h3 class="power-comparision-header">What does 0.0kWh power?</h3>
             <div class="power-comparision-grid">
                 <div class="power-comparision-card">
                     <div class="power-comparision-card-icon pc1" >
                         <i class="fas fa-mobile-screen"></i>
                     </div>
                     <div class="power-comparision-card-data">
-                        <p class="power-comparision-card-data-number">1180</p>
+                        <p class="power-comparision-card-data-number">0.0</p>
                         <p class="power-comparision-card-data-device">PHONE CHARGES</p>
 
                     </div>
@@ -314,7 +364,7 @@
                         <i class="fas fa-laptop"></i>
                     </div>
                     <div class="power-comparision-card-data">
-                        <p class="power-comparision-card-data-number">284</p>
+                        <p class="power-comparision-card-data-number">0.0</p>
                         <p class="power-comparision-card-data-device">LAPTOP HOURS</p>
 
                     </div>
@@ -324,7 +374,7 @@
                         <i class="fas fa-lightbulb"></i>
                     </div>
                     <div class="power-comparision-card-data">
-                        <p class="power-comparision-card-data-number">1420</p>
+                        <p class="power-comparision-card-data-number">0.0</p>
                         <p class="power-comparision-card-data-device">LED BULB HOURS</p>
 
                     </div>
@@ -334,7 +384,7 @@
                         <i class="fas fa-fan"></i>
                     </div>
                     <div class="power-comparision-card-data">
-                        <p class="power-comparision-card-data-number">190</p>
+                        <p class="power-comparision-card-data-number">0.0</p>
                         <p class="power-comparision-card-data-device">CEILING FAN HOURS</p>
 
                     </div>
@@ -404,125 +454,7 @@
           </div>
       </section> 
 
-      <section id="logs" class=" hidden logs-section">
-         <div class="logs-container"> 
-            <div class="log-header-container">
-                 <h2 class="logs-header">Historical Data Logs</h2>
-            </div>
-   
-          <div class="logs-table-wrapper">
-        <table class="logs-table">
-            <thead>
-                <tr>
-                    <th>TIMESTAMP</th>
-                    <th>SOURCE</th>
-                    <th>VOLTAGE (V)</th>
-                    <th>CURRENT (A)</th>
-                    <th>POWER (W)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="log-time">09:34</td>
-                    <td><span class="source-badge badge-solar">Solar Panel</span></td>
-                    <td>10.64 V</td>
-                    <td>2.01 A</td>
-                    <td class="log-power">21.39 W</td>
-                </tr>
-                
-                <tr>
-                    <td class="log-time">09:19</td>
-                    <td><span class="source-badge badge-wind">Wind Turbine</span></td>
-                    <td>9.05 V</td>
-                    <td>2.05 A</td>
-                    <td class="log-power">18.55 W</td>
-                </tr>
-
-                <tr>
-                    <td class="log-time">09:04</td>
-                    <td><span class="source-badge badge-solar">Solar Panel</span></td>
-                    <td>11.97 V</td>
-                    <td>1.62 A</td>
-                    <td class="log-power">19.39 W</td>
-                </tr>
-                
-                <tr>
-                    <td class="log-time">08:49</td>
-                    <td><span class="source-badge badge-wind">Wind Turbine</span></td>
-                    <td>10.76 V</td>
-                    <td>3.20 A</td>
-                    <td class="log-power">34.43 W</td>
-                </tr>
-
-                <tr>
-                    <td class="log-time">08:34</td>
-                    <td><span class="source-badge badge-solar">Solar Panel</span></td>
-                    <td>11.35 V</td>
-                    <td>2.14 A</td>
-                    <td class="log-power">24.29 W</td>
-                </tr>
-
-                <tr>
-                    <td class="log-time">08:19</td>
-                    <td><span class="source-badge badge-wind">Wind Turbine</span></td>
-                    <td>11.69 V</td>
-                    <td>1.64 A</td>
-                    <td class="log-power">19.17 W</td>
-                </tr>
-
-                <tr>
-                    <td class="log-time">08:04</td>
-                    <td><span class="source-badge badge-solar">Solar Panel</span></td>
-                    <td>9.20 V</td>
-                    <td>3.43 A</td>
-                    <td class="log-power">31.56 W</td>
-                </tr>
-
-                <tr>
-                    <td class="log-time">07:49</td>
-                    <td><span class="source-badge badge-wind">Wind Turbine</span></td>
-                    <td>8.80 V</td>
-                    <td>2.10 A</td>
-                    <td class="log-power">18.48 W</td>
-                </tr>
-
-                <tr>
-                    <td class="log-time">07:34</td>
-                    <td><span class="source-badge badge-solar">Solar Panel</span></td>
-                    <td>8.45 V</td>
-                    <td>1.25 A</td>
-                    <td class="log-power">10.56 W</td>
-                </tr>
-
-                <tr>
-                    <td class="log-time">07:19</td>
-                    <td><span class="source-badge badge-wind">Wind Turbine</span></td>
-                    <td>10.12 V</td>
-                    <td>2.80 A</td>
-                    <td class="log-power">28.34 W</td>
-                </tr>
-
-                <tr>
-                    <td class="log-time">07:04</td>
-                    <td><span class="source-badge badge-solar">Solar Panel</span></td>
-                    <td>6.10 V</td>
-                    <td>0.85 A</td>
-                    <td class="log-power">5.19 W</td>
-                </tr>
-
-                <tr>
-                    <td class="log-time">06:49</td>
-                    <td><span class="source-badge badge-wind">Wind Turbine</span></td>
-                    <td>11.20 V</td>
-                    <td>3.10 A</td>
-                    <td class="log-power">34.72 W</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="bottom-placeholder"></div>
-         </div>
-      </section> 
+ 
         
      <section id="team" class="view-section hidden team-section">
        <div class="team-container">
@@ -547,7 +479,7 @@
                 <div class="team-section-grid">
                     <div class="team-card tc1">
                         <div class="team-card-icon-container guide ">   
-                            <img src="harshil-hot-pic.webp" alt="member-photo" class="team-card-image">
+                            <img src="Harshil-image.jpeg" alt="member-photo" class="team-card-image">
                   
                 </div>
                 <h3 class="team-card-header">Harshil Sanchela</h3>
@@ -585,8 +517,7 @@
         <select id="langSelect" class="voice-lang-select">
             <option value="en-US">EN</option>
             <option value="hi-IN">हिन्दी</option>
-            <option value="mr-IN">मराठी</option>
-            <option value="gu-IN">ગુજ</option>
+
         </select>
         
         <button id="startBtn" class="voice-fab">
